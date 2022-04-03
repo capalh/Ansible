@@ -1,5 +1,4 @@
-## Prepare ansible test environment, three Linux host running redhat
-
+## Prepare ansible test environment, three Linux host running CentOSv7
 
 host_list = [
 
