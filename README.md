@@ -108,3 +108,4 @@ ansible web1 -m ping -i inventory.ini --private-key=~/.ssh/ansible
 
 ### Playbook
 
+Playbooks are Ansible's configuration, deployment, and orchestration language. Use YAML data structure. 
