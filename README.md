@@ -40,3 +40,13 @@ Sample sftp.json file
 
 ### Inventory 
 
+The `Inventory` is used to define the list of the hosts
+
+1. Make sure enabled `PasswordAuthentication` as `Yes`, change the settings `sudo vi /etc/ssh/sshd_config`, 
+2. Restart the sshd servcie `sudo systemctl restart sshd.service`
+
+A sample inventory file - Try to ping the host-2 using ansible
+
+```
+host-2  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
+```
