@@ -50,3 +50,14 @@ A sample inventory file - Try to ping the host-2 using ansible
 ```
 host-2  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
 ```
+Then run `ansible all -m ping -i inventory.ini`, got the response:
+
+```
+host-2 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
