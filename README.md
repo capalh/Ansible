@@ -1,5 +1,7 @@
 ## What's Ansible
 
+A powerful automated deployment tool
+
 ### Prepare Ansible test environment
 
 1. Prepare three Linux host - CentOSv7
