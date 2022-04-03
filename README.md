@@ -85,11 +85,21 @@ host-3 | SUCCESS => {
 host-2  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
 
 [web2]
-host-3  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
+host-3  ansible_connection=ssh  ans  ible_user=vagrant    ansible_ssh_pass=vagrant
 ```
 or using Regular expression
 
 ```
 [web1]
 host-[2:3]  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
+```
+
+4. Use SSH-key to auth. In real world, we don't want to input password in the inventory file
+
+Step1: Use `ssh-keygen` to genreate key-pair
+Step2: Use `ssh-copy-id -i ansible host-2` to copy the public key to the host-2 and host-3
+Step3: Login use `ssh -i ~/.ssh/ansible host-2` without input password
+
+```
+ansible web1 -m ping -i inventory.ini --private-key=~/.ssh/ansible
 ```
