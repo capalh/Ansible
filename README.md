@@ -18,3 +18,25 @@ sudo yum -y install ansible                 # Install ansible package
 192.168.200.12 host-2
 192.168.200.13 host-3
 ```
+
+4. Use VSCode to sync the folder. Install the sftp plugin under VScode. 
+
+Sample sftp.json file
+
+```
+{
+    "name": "My Server",
+    "host": "192.168.200.11",
+    "protocol": "sftp",
+    "port": 22,
+    "username": "vagrant",
+    "privateKeyPath": "/Users/labadmin/DevOps/ansible/.vagrant/machines/master/virtualbox/private_key",
+    "remotePath": "/home/vagrant/ansible",
+    "uploadOnSave": true
+}
+
+```
+
+
+### Inventory 
+
