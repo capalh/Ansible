@@ -103,3 +103,8 @@ Step3: Login use `ssh -i ~/.ssh/ansible host-2` without input password
 ```
 ansible web1 -m ping -i inventory.ini --private-key=~/.ssh/ansible
 ```
+
+
+
+### Playbook
+
