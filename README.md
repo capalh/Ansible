@@ -37,15 +37,15 @@ Sample sftp.json file
 
 ```
 
+5. Enable the password authentication. Make sure enabled `PasswordAuthentication` as `Yes`, change the settings `sudo vi /etc/ssh/sshd_config`, 
+6. Restart the sshd servcie `sudo systemctl restart sshd.service`
+
 
 ### Inventory 
 
 The `Inventory` is used to define the list of the hosts
 
-1. Make sure enabled `PasswordAuthentication` as `Yes`, change the settings `sudo vi /etc/ssh/sshd_config`, 
-2. Restart the sshd servcie `sudo systemctl restart sshd.service`
-
-A sample inventory file - Try to ping the host-2 using ansible
+1. A sample inventory file - Try to ping the host-2 using ansible
 
 ```
 host-2  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
@@ -60,4 +60,36 @@ host-2 | SUCCESS => {
     "changed": false,
     "ping": "pong"
 }
+```
+
+ping - the ping here is Ansible ping rather than TCP/IP ping
+all - excute all hosts 
+
+2. We can also specify a host for ping test `ansible host-3 -m ping -i inventory.ini`
+
+```
+$ ansible host-3 -m ping -i inventory.ini
+host-3 | SUCCESS => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": false,
+    "ping": "pong"
+}
+```
+
+3. Group of hosts, then `ansible web1 -m ping -i inventory.ini`, 
+
+```
+[web1]
+host-2  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
+
+[web2]
+host-3  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
+```
+or using Regular expression
+
+```
+[web1]
+host-[2:3]  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
 ```
