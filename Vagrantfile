@@ -35,5 +35,5 @@ Vagrant.configure("2") do |config|
             host.vm.network "private_network", ip: item[:eth1]      
         end
     end
-#    config.vm.provision "shell", path:"./setup.sh"    
+    config.vm.provision "shell", path:"./setup.sh"    
 end
