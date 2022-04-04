@@ -121,3 +121,22 @@ Playbooks are Ansible's configuration, deployment, and orchestration language, a
 ```
 
 2. Excute the playbook `ansible-playbook playbook.yaml -i inventory.ini --private-key=~/.ssh/ansible`
+3. Result ->
+
+```
+$ ansible-playbook playbook.yaml -i inventory.ini --private-key=~/.ssh/ansible
+
+PLAY [play-test] *****************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] ***********************************************************************************************************************************************************************
+ok: [host-3]
+ok: [host-2]
+
+TASK [check host connection] *****************************************************************************************************************************************************************
+ok: [host-2]
+ok: [host-3]
+
+PLAY RECAP ***********************************************************************************************************************************************************************************
+host-2                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+host-3                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
