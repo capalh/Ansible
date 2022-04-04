@@ -4,22 +4,9 @@ A powerful automated deployment tool
 
 ### Prepare Ansible test environment
 
-1. Deploy three Linux host - CentOSv7
-2. Install Ansible - only on the master node
-
-```
-sudo yum -y install epel-release            # Install the dependency
-sudo yum -y install ansible                 # Install ansible package
-```
-3. Configure the /etc/hosts file 
-
-```
-192.168.200.11 master
-192.168.200.12 host-2
-192.168.200.13 host-3
-```
-
-4. Use VSCode to sync the folder. Install the sftp plugin under VScode. 
+1. Deploy three Linux host by levarege Vagrant. Refer setup.sh script.
+2. Install ansible and its dependency. Refer setup.sh script. 
+2. Use VSCode to sync the folder. Install the sftp plugin under VScode. 
 
 Sample sftp.json file
 
@@ -30,15 +17,12 @@ Sample sftp.json file
     "protocol": "sftp",
     "port": 22,
     "username": "vagrant",
-    "privateKeyPath": "/Users/labadmin/DevOps/ansible/.vagrant/machines/master/virtualbox/private_key",
-    "remotePath": "/home/vagrant/ansible",
+    "privateKeyPath": "/Users/labadmin/DevOps/ansible/.vagrant/machines/master/virtualbox/private_key",     # Use private key to auth
+    "remotePath": "/home/vagrant/ansible",                                                                  # Set the correct path, need to mkdir the ansible folder first
     "uploadOnSave": true
 }
 
 ```
-
-5. Enable the password authentication. Make sure enabled `PasswordAuthentication` as `Yes`, change the settings `sudo vi /etc/ssh/sshd_config`, 
-6. Restart the sshd servcie `sudo systemctl restart sshd.service`
 
 
 ### Inventory 
