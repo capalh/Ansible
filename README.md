@@ -108,4 +108,16 @@ ansible web1 -m ping -i inventory.ini --private-key=~/.ssh/ansible
 
 ### Playbook
 
-Playbooks are Ansible's configuration, deployment, and orchestration language. Use YAML data structure. 
+Playbooks are Ansible's configuration, deployment, and orchestration language, and use YAML data structure. 
+
+1. Use playbook. Sample file 
+
+```
+- hosts: web1
+  name: play-test
+  tasks:
+    - name: check host connection
+      ping: 
+```
+
+2. Excute the playbook `ansible-playbook playbook.yaml -i inventory.ini --private-key=~/.ssh/ansible`

@@ -1,0 +1,7 @@
+# A test playbook
+
+- hosts: web1
+  name: play-test
+  tasks:
+    - name: check host connection
+      ping: 
