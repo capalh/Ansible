@@ -15,7 +15,7 @@ sudo yum -y install ansible
 
 # Edit the /etc/hosts file
 
-sudo sh -c "echo 192.168.200.11 master >> /etc/hosts"
-sudo sh -c "echo 192.168.200.12 host-2 >> /etc/hosts"
-sudo sh -c "echo 192.168.200.13 host-3 >> /etc/hosts"
+sudo sh -c "echo 192.168.200.11 ansible-master >> /etc/hosts"
+sudo sh -c "echo 192.168.200.12 ansible-node1 >> /etc/hosts"
+sudo sh -c "echo 192.168.200.13 ansible-node2 >> /etc/hosts"
 

@@ -3,19 +3,19 @@
 host_list = [
 
     {
-        :name => "master",
+        :name => "ansible-master",
         :eth1 => "192.168.200.11",
         :mem => "2048",
         :cpu => "2"
     },
     {
-        :name => "host-2",
+        :name => "ansible-node1",
         :eth1 => "192.168.200.12",
         :mem => "2048",
         :cpu => "1"
     },
     {
-        :name => "host-3",
+        :name => "ansible-node2",
         :eth1 => "192.168.200.13",
         :mem => "2048",
         :cpu => "1"
