@@ -6,7 +6,7 @@ sudo yum install -y git vim gcc glibc-static telnet psmisc epel-release
 
 # Enable PasswordAuthentication, username=vagrant, password=vagrant
 
-sudo sed -i `s/PasswordAuthentication no/PasswordAuthentication yes/g` /etc/ssh/sshd_config
+sudo sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 sudo systemctl restart sshd
 
 # Install ansible 
