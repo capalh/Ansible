@@ -140,3 +140,13 @@ PLAY RECAP *********************************************************************
 host-2                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 host-3                     : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
+
+
+### Ansible core concept 
+
+1. Inventory - Define the host list
+2. Playbook - Integrate various of mudules to excute kind of request
+3. Module - Used to act kinds of request, there are lots of mudules. See the KB:
+
+https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
+
