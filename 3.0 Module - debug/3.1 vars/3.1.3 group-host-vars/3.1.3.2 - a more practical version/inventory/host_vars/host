@@ -1,4 +1,0 @@
-[all]
-
-ansible-node1   
-ansible-node2   http_port=443

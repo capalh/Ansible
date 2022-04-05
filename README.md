@@ -134,3 +134,6 @@ host-3                     : ok=2    changed=0    unreachable=0    failed=0    s
 
 https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 
+
+### Ansible configuraton file - ansible.cfg
+
