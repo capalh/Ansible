@@ -1,0 +1,54 @@
+# 1.1 loop - dispaly all the item in the looptest
+
+# - name: Hello World
+#   hosts: localhost
+
+#   vars:
+#     looptest:
+#       - test1
+#       - test2
+#       - test3
+#       - test4
+
+#   tasks:
+#     - name: Test loop
+#       debug: 
+#         msg: "{{looptest}}"
+
+
+# 1.2 loop - dispaly all the item using a loop
+
+- name: Hello World
+  hosts: localhost
+
+  vars:
+    looptest:
+      - test1
+      - test2
+      - test3
+      - test4
+
+  tasks:
+    - name: Test loop
+      debug: 
+        msg: "{{item}}"
+      with_items: "{{looptest}}"
+
+# Result:
+
+# TASK [Test loop] ********************************************************************************************************************************************************************************************************
+# ok: [localhost] => (item=test1) => {
+#     "msg": "test1"
+# }
+# ok: [localhost] => (item=test2) => {
+#     "msg": "test2"
+# }
+# ok: [localhost] => (item=test3) => {
+#     "msg": "test3"
+# }
+# ok: [localhost] => (item=test4) => {
+#     "msg": "test4"
+# }
+
+# PLAY RECAP **************************************************************************************************************************************************************************************************************
+# localhost         

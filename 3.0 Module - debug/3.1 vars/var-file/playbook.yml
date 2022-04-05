@@ -1,10 +1,11 @@
-# Ansible debug module
+# Ansible vars
 
 - name: Hello World
   hosts: localhost
 
+  vars_files:
+    - "varfile.yml"
   tasks:
     - name: Hello World debug
       debug: 
-        msg: "Hello ansible"
-        # verbosity: 3
+        msg: "{{greetings}}"
