@@ -1,0 +1,9 @@
+# Ansible debug module
+
+- name: Hello World
+  hosts: localhost
+
+  tasks:
+    - name: HelloWorld
+      debug: 
+        msg: "Hello Jason"
