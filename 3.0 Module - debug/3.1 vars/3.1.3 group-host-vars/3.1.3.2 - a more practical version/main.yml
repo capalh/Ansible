@@ -1,4 +1,6 @@
-# group-host-var
+# Define a group_var to place the variables
+# Define a host_var to place the host list
+# Define a main.yaml file
 
 - name: Hello World
   hosts: all
