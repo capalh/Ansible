@@ -137,3 +137,11 @@ https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 
 ### Ansible configuraton file - ansible.cfg
 
+1. We can configure environment variables using the ansible.cfg file. 
+2. Sample : Configure inventory host path in ansible.cfg file, instead of using the `-i inventory/hosts` option
+
+```
+[defaults]
+
+inventory = inventory/hosts
+```
