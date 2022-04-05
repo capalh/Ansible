@@ -1,0 +1,7 @@
+# Version 1
+
+[all]
+
+ansible-node1  ansible_user=vagrant     ansible_password=vagrant    ansible_connection=ssh
+ansible-node2  ansible_user=vagrant     ansible_password=vagrant    ansible_connection=ssh    
+

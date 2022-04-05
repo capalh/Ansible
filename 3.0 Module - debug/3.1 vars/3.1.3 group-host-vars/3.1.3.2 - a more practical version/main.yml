@@ -1,0 +1,9 @@
+# group-host-var
+
+- name: Hello World
+  hosts: all
+
+  tasks:
+    - name: Test vars
+      debug: 
+        msg: "ansible_user= {{ ansible_user }}, ansible_password= {{ ansible_password }}, http_port= {{ http_port }}"

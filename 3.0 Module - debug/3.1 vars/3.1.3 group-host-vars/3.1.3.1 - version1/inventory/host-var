@@ -1,0 +1,12 @@
+# Version 2 - use host vars and group vars
+
+[all]
+
+ansible-node1   http_port=80
+ansible-node2   http_port=443
+
+[all:vars]
+
+ansible_user=vagrant
+ansible_password=vagrant
+ansible_connection=ssh

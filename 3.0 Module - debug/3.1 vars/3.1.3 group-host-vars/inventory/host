@@ -1,4 +1,0 @@
-[all]
-
-host-2  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
-host-3  ansible_connection=ssh  ansible_user=vagrant    ansible_ssh_pass=vagrant
