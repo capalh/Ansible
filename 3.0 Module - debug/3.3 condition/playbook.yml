@@ -1,0 +1,30 @@
+# condition - only display when value >=3
+
+- name: Hello World
+  hosts: localhost
+
+  vars:
+    num_list:
+      - 1
+      - 2
+      - 3
+      - 4
+
+  tasks:
+    - name: Test loop
+      debug: 
+        msg: "{{item}}"
+      with_items: "{{num_list}}"
+      when: item>=3
+
+# Result: 
+
+# TASK [Test loop] ********************************************************************************************************************************************************************************************************
+# skipping: [localhost] => (item=1) 
+# skipping: [localhost] => (item=2) 
+# ok: [localhost] => (item=3) => {
+#     "msg": 3
+# }
+# ok: [localhost] => (item=4) => {
+#     "msg": 4
+# }
