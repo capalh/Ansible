@@ -1,0 +1,21 @@
+---
+
+- name: file module
+  hosts: all
+  become: yes                                   # grant sudo priviliege
+  
+  tasks:
+    - name: Create a directory if not exist 
+      file:                                     # file mudole used to create folder if not exist
+        path: /etc/test
+        state: directory
+
+    - name: copy files from local to remote
+      copy:       
+        src: files/test.txt
+        dest: /etc/test/test.txt
+
+    - name: test template
+      template: 
+        src: templates/test.j2
+        dest: /etc/test/test.cfg
