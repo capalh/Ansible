@@ -1,2 +1,13 @@
-# site.yml is actually a playbook
+# site.yml is a playbook. Sample site file.
 
+---
+
+- name: file module
+  hosts: all
+  become: yes                                   # grant sudo priviliege
+  
+  tasks:
+    - name: Create a directory if not exist 
+      file:                                     # file mudole used to create folder if not exist
+        path: /etc/test
+        state: directory
