@@ -145,3 +145,8 @@ https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 
 inventory = inventory/hosts
 ```
+
+
+### Ansible frequently used CLI
+
+1. We can use `ansible all -m shell -a "more /etc/test/test.txt"` to read the result more easily. 
