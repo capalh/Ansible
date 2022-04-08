@@ -1,0 +1,31 @@
+# user and group mudule
+# Create a group as follows
+
+---
+
+- name: system module
+  hosts: all       
+  gather_facts: no   
+  become: yes                     
+  
+  tasks:
+    - name: Ping task
+      ping: 
+
+    - name: create groups
+      group: 
+        name: ansible-group-demo
+        state: present                  ## Create a group
+#        state: absent                  ## Remove a group
+
+    - name: create a user
+      user: 
+        name: ansible-user-demo
+        password: "{{ 'demo' | password_hash('sha512')}}"     # grant a password for a user; a python function, not ansible language
+
+    # - name: delete a user
+    #   user: 
+    #     name: ansible-user-demo  
+    #     state: absent      
+    #     remove: yes                    # remove the folder under /home directory, by default the home directory is still present even if the user is removed.
+

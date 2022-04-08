@@ -1,0 +1,5 @@
+# Group vars, sharable vars, like the username and password, connetion type, etc
+
+ansible_user: vagrant
+ansible_password: vagrant
+ansible_connection: ssh
