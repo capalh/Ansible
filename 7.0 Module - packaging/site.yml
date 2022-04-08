@@ -1,20 +1,24 @@
 # Install yum package
+# Add when to install pkg for different Linux platform. 
 
 ---
 
 - name: Packaging module
   hosts: all       
-  gather_facts: no   
+  gather_facts: yes   
   become: yes                     
   
   tasks:
-    - name: Install pkg using yum
+    - name: Install pkg using yum for CentOS
       yum:
-        name: 
-          - git           # install mutiple pkg
-          - mysql
+        name: git
         state: present
-        
+      when: ansible_facts['distrubution'] == "CentOS"
 
+    - name: Install pkg using apt for Ubuntu
+      apt:
+        name: git
+        state: present      
+      when: ansible_facts['distrubution'] == "Ubuntu"
 
       
