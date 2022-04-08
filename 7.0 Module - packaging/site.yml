@@ -1,5 +1,6 @@
 # Install yum package
 # Add when to install pkg for different Linux platform. 
+# Or we can use the package module regardless the Linux version
 
 ---
 
@@ -9,16 +10,22 @@
   become: yes                     
   
   tasks:
-    - name: Install pkg using yum for CentOS
-      yum:
-        name: git
-        state: present
-      when: ansible_facts['distrubution'] == "CentOS"
+    # - name: Install pkg using yum for CentOS
+    #   yum:
+    #     name: git
+    #     state: present
+    #   when: ansible_facts['distrubution'] == "CentOS"
 
-    - name: Install pkg using apt for Ubuntu
-      apt:
-        name: git
-        state: present      
-      when: ansible_facts['distrubution'] == "Ubuntu"
+    # - name: Install pkg using apt for Ubuntu
+    #   apt:
+    #     name: git
+    #     state: present      
+    #   when: ansible_facts['distrubution'] == "Ubuntu"
+
+      - name: Test package module
+        package:
+          name: git
+          state: present
+    
 
       
