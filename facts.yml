@@ -1,9 +1,0 @@
-# This YAML file is used for using debug module to display the facts
-
----
-- name: SHOW FACTS      
-  hosts: all
-  tasks:
-    - name: print facts
-      debug: 
-        var: ansible_facts
