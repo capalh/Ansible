@@ -22,6 +22,7 @@
       user: 
         name: ansible-user-demo
         password: "{{ 'demo' | password_hash('sha512')}}"     # grant a password for a user; a python function, not ansible language
+                                                              # however this is not a best practice to put password as plain text. we want to use token instead.
 
     # - name: delete a user
     #   user: 
