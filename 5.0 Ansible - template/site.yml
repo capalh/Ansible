@@ -2,11 +2,11 @@
 
 - name: file module
   hosts: all
-  become: yes                                   # grant sudo priviliege
+  become: yes                                  
   
   tasks:
     - name: Create a directory if not exist 
-      file:                                     # file mudole used to create folder if not exist
+      file:                                    
         path: /etc/test
         state: directory
 

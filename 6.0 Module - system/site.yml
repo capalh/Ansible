@@ -1,0 +1,22 @@
+# ping - ansible module
+# gather_facts: Gather facts about the remote hosts
+# One way is using command line `ansible all -m gather_facts`
+# By default gather_facts is enabled. We want to disable it as set to no because it will more time to run the script.
+# For cases, we want to enable it and lookup some internal JSON data. 
+# We can save the JSON format using this way `ansible all -m gather_facts --tree ./facts`
+
+
+---
+
+- name: system module
+  hosts: all       
+  gather_facts: yes                         
+  
+  tasks:
+    - name: Ping task
+      ping: 
+
+    - name: print host IPv4 address
+      debug:
+        msg: "{{ ansible_eth1.ipv4 }}"
+
