@@ -1,0 +1,20 @@
+# Install yum package
+
+---
+
+- name: Packaging module
+  hosts: all       
+  gather_facts: no   
+  become: yes                     
+  
+  tasks:
+    - name: Install pkg using yum
+      yum:
+        name: 
+          - git           # install mutiple pkg
+          - mysql
+        state: present
+        
+
+
+      
