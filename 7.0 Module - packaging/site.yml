@@ -26,6 +26,8 @@
         package:
           name: git
           state: present
+
+# Note: There is also posssible that the pkg name is varies for different platforms, so we may still need to rely on gather_facts to differentiate the installation of pgk even use `package`
     
 
       
