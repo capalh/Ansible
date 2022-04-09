@@ -1,0 +1,16 @@
+# Use pip to install flask and configured it in the venv 
+
+---
+
+- name: Packaging module - pip
+  hosts: all       
+  gather_facts: yes   
+  become: yes                     
+  
+  tasks:
+    - name: pip install flask
+      pip:
+        name: flask
+        state: present
+        virtualenv: /home/vagrant/vir/
+        virtualenv_command: /usr/bin/python3 -m venv
