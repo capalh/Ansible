@@ -132,7 +132,7 @@ host-3                     : ok=2    changed=0    unreachable=0    failed=0    s
 ```
 
 
-### 4.0 Ansible configuraton file - ansible.cfg
+### 4. Ansible configuraton file - ansible.cfg
 
 1. We can configure environment variables using the ansible.cfg file. 
 2. Sample : Configure inventory host path in ansible.cfg file, instead of using the `-i inventory/hosts` option
@@ -144,7 +144,7 @@ inventory = inventory/hosts
 ```
 
 
-### 5.0 Ansible frequently used CLI
+### 5. Ansible frequently used CLI
 
 1. We can use `ansible all -m shell -a "more /etc/test/test.txt"` to read the result more easily. 
 2. Use command to encrypt the file - `ansible-vault encrypt/decrypt all.yml`
@@ -153,7 +153,7 @@ inventory = inventory/hosts
 5. Encrpyt a specific string of the YAML file `ansible-vault encrypt_string "vagrant" --name "ansible_password"`
 
 
-### 6.0 Ansible Modules - continues...
+### 6. Ansible Modules - continues...
 
 1. `Net Tools` -> Sample yaml file
 
