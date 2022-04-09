@@ -150,6 +150,7 @@ inventory = inventory/hosts
 ### Ansible frequently used CLI
 
 1. We can use `ansible all -m shell -a "more /etc/test/test.txt"` to read the result more easily. 
+2. Use command to encrypt the file - `ansible-vault encrypt/decrypt all.yml`
 
 
 ### Ansible Modules
