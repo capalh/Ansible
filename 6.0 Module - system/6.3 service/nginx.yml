@@ -1,4 +1,7 @@
 # Install nginx on CentOS
+# replace the html using the customized one `index.html.j2`, using jinja2 as the template, read the OS version. 
+# Start the nginx service. 
+
 
 ---
 
