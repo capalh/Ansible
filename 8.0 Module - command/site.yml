@@ -1,0 +1,16 @@
+# Command module
+# use register to get the return value from command result. and display it using debug mudule.
+
+---
+
+- name: Command module
+  hosts: all       
+  become: yes                     
+  
+  tasks:
+    - name: test command
+      command: cat /etc/hosts
+      register: hosts_vallue
+    
+    - debug:
+        msg: "{{ hosts_vallue }}"
