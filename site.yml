@@ -5,10 +5,10 @@
   become: yes                     
   
   tasks:
-    - name: test get_url
-      get_url:
-        url: https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tgz
-        dest: /home/vagrant
-        checksum: 7011fa5e61dc467ac9a98c3d62cfe2be
-      
+    - name: Test set facts
+      set_fact:
+        defined_set_fact: "set facts by admin"
+    - debug: 
+        var: defined_set_fact
+
 

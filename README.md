@@ -172,3 +172,15 @@ inventory = inventory/hosts
         dest: /home/vagrant
         checksum: 7011fa5e61dc467ac9a98c3d62cfe2be
 ```
+
+2. `set_fact` used to define a varaiable. 
+
+```
+  tasks:
+    - name: Test set facts
+      set_fact:
+        defined_set_fact: "set facts by admin"
+    - debug: 
+        var: defined_set_fact
+```
+
