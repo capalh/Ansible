@@ -151,6 +151,9 @@ inventory = inventory/hosts
 
 1. We can use `ansible all -m shell -a "more /etc/test/test.txt"` to read the result more easily. 
 2. Use command to encrypt the file - `ansible-vault encrypt/decrypt all.yml`
+3. To read the playbook, will need to add a opotion `ansible-playbook site.yml --ask-vault-pass`
+4. Use `ansible-vault view all.yml` to check the file-vaulted content; Use `ansible-vault edit all.yml` to online edit the file-vaulted content.
+5. Encrpyt a specific string of the YAML file `ansible-vault encrypt_string "vagrant" --name "ansible_password"`
 
 
 ### Ansible Modules
