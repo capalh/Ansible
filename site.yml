@@ -1,14 +1,20 @@
 ---
 
-- name: Net-tools mudole
+- name: URI module
   hosts: all       
   become: yes                     
   
   tasks:
-    - name: Test set facts
-      set_fact:
-        defined_set_fact: "set facts by admin"
-    - debug: 
-        var: defined_set_fact
+    - name: Check that you can connect (GET) to a page and it reuntres a status 200
+      uri:
+        url: http://www.example.com
+        return_content: yes
+      register: results
+
+    - debug:
+        var: results
+
+
+
 
 

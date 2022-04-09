@@ -151,6 +151,8 @@ inventory = inventory/hosts
 3. To read the playbook, will need to add a opotion `ansible-playbook site.yml --ask-vault-pass`
 4. Use `ansible-vault view all.yml` to check the file-vaulted content; Use `ansible-vault edit all.yml` to online edit the file-vaulted content.
 5. Encrpyt a specific string of the YAML file `ansible-vault encrypt_string "vagrant" --name "ansible_password"`
+6. We can use ansible-lint for ansible YAML file format check. 
+
 
 
 ### 6. Ansible Modules - continues...
@@ -181,3 +183,18 @@ inventory = inventory/hosts
         var: defined_set_fact
 ```
 
+3. `fetch` to copy remote file to local
+
+4. `URI` to fetch the web status. Sample YAML file ->
+
+```
+  tasks:
+    - name: Check that you can connect (GET) to a page and it reuntres a status 200
+      uri:
+        url: http://www.example.com
+        return_content: yes
+      register: results
+
+    - debug:
+        var: results
+```

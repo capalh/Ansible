@@ -1,14 +1,12 @@
 # Install nginx on CentOS
 # replace the html using the customized one `index.html.j2`, using jinja2 as the template, read the OS version. 
 # Start the nginx service. 
-
-
 ---
 
 - name: Install nginx on CentOS 
   hosts: all         
   become: yes                     
-  
+
   tasks:
     - name: Yum install nginx on CentOS
       yum:
