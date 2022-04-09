@@ -150,3 +150,21 @@ inventory = inventory/hosts
 ### Ansible frequently used CLI
 
 1. We can use `ansible all -m shell -a "more /etc/test/test.txt"` to read the result more easily. 
+
+
+### Ansible Modules
+
+1. `Net Tools` -> Sample yaml file
+
+```
+- name: Net-tools mudole
+  hosts: all       
+  become: yes                     
+  
+  tasks:
+    - name: test get_url
+      get_url:
+        url: https://www.python.org/ftp/python/3.10.4/Python-3.10.4.tgz
+        dest: /home/vagrant
+        checksum: 7011fa5e61dc467ac9a98c3d62cfe2be
+```
