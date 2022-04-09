@@ -1,6 +1,13 @@
-# What's Ansible
+# What's Ansible and Ansible core concept
 
-A powerful automated deployment tool
+A powerful automated deployment tool. There are three core concept for Ansible:
+
+1. Inventory - Define the host list
+2. Playbook - Integrate various of mudules to excute kind of request
+3. Module - Used to act kinds of request, there are lots of mudules. See the KB:
+
+https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
+
 
 ### 1. Prepare Ansible test environment
 
@@ -125,16 +132,7 @@ host-3                     : ok=2    changed=0    unreachable=0    failed=0    s
 ```
 
 
-### Ansible core concept 
-
-1. Inventory - Define the host list
-2. Playbook - Integrate various of mudules to excute kind of request
-3. Module - Used to act kinds of request, there are lots of mudules. See the KB:
-
-https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
-
-
-### Ansible configuraton file - ansible.cfg
+### 4.0 Ansible configuraton file - ansible.cfg
 
 1. We can configure environment variables using the ansible.cfg file. 
 2. Sample : Configure inventory host path in ansible.cfg file, instead of using the `-i inventory/hosts` option
@@ -146,7 +144,7 @@ inventory = inventory/hosts
 ```
 
 
-### Ansible frequently used CLI
+### 5.0 Ansible frequently used CLI
 
 1. We can use `ansible all -m shell -a "more /etc/test/test.txt"` to read the result more easily. 
 2. Use command to encrypt the file - `ansible-vault encrypt/decrypt all.yml`
@@ -155,7 +153,7 @@ inventory = inventory/hosts
 5. Encrpyt a specific string of the YAML file `ansible-vault encrypt_string "vagrant" --name "ansible_password"`
 
 
-### Ansible Modules
+### 6.0 Ansible Modules - continues...
 
 1. `Net Tools` -> Sample yaml file
 
