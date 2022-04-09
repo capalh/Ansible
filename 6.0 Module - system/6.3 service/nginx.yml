@@ -1,0 +1,33 @@
+# Install nginx on CentOS
+
+---
+
+- name: Install nginx on CentOS 
+  hosts: all         
+  become: yes                     
+  
+  tasks:
+    - name: Yum install nginx on CentOS
+      yum:
+        name: 
+          - epel-release
+          - nginx
+        state: present
+      # when: ansible_facts['distrubution'] == "CentOS"
+
+    - name: change index.html on CentOS
+      become: yes
+      template: 
+        src: templates/index.html.j2
+        dest: /usr/share/nginx/html/index.html
+
+    - name: Start service of nginx
+      become: yes
+      service:
+        name: nginx
+        state: started
+
+
+
+
+      
