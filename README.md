@@ -2,7 +2,7 @@
 
 A powerful automated deployment tool
 
-### Prepare Ansible test environment
+### 1. Prepare Ansible test environment
 
 1. Deploy three Linux host by levarege Vagrant. Refer setup.sh script.
 2. Install ansible and its dependency. Refer setup.sh script. 
@@ -25,7 +25,7 @@ Sample sftp.json file
 ```
 
 
-### Inventory 
+### 2. Inventory 
 
 The `Inventory` is used to define the list of the hosts
 
@@ -89,8 +89,7 @@ ansible web1 -m ping -i inventory.ini --private-key=~/.ssh/ansible
 ```
 
 
-
-### Playbook
+### 3. Playbook
 
 Playbooks are Ansible's configuration, deployment, and orchestration language, and use YAML data structure. 
 
@@ -173,7 +172,7 @@ inventory = inventory/hosts
         checksum: 7011fa5e61dc467ac9a98c3d62cfe2be
 ```
 
-2. `set_fact` used to define a varaiable. 
+2. `set_fact` used to define a varaiable. Sample YAML file
 
 ```
   tasks:
