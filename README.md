@@ -201,4 +201,13 @@ inventory = inventory/hosts
 
 5. `block/rescure/always` module simlar to `try/except/finally` function in Python, used for error handling
 
-6. `ansible-galaxy` be used to craete personal designed roles and share it outsite. `ansible-galaxy role init ansible-galaxy-demo`
+### 7. Ansible-galaxy
+
+1. `ansible-galaxy` be used to create self-coded roles and share it outsite. Sample command: `ansible-galaxy role init ansible-galaxy-demo`
+
+
+### 8. Ansible Tower
+
+1. Web based ansible tool owned by Red Hat. 
+
+To be continued...
