@@ -200,3 +200,5 @@ inventory = inventory/hosts
 ```
 
 5. `block/rescure/always` module simlar to `try/except/finally` function in Python, used for error handling
+
+6. `ansible-galaxy` be used to craete personal designed roles and share it outsite. `ansible-galaxy role init ansible-galaxy-demo`
