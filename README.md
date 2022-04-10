@@ -155,7 +155,6 @@ inventory = inventory/hosts
 
 
 
-
 ### 6. Ansible Modules - continues...
 
 1. `Net Tools` -> Sample yaml file
@@ -199,3 +198,5 @@ inventory = inventory/hosts
     - debug:
         var: results
 ```
+
+5. `block/rescure/always` module simlar to `try/except/finally` function in Python, used for error handling
