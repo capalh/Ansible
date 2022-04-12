@@ -1,0 +1,20 @@
+
+- name: Install git on CentOS
+  become: yes
+  package:
+    name: git
+    state: present
+
+
+- name: checkout source code from github
+  git:
+    repo: 'https://github.com/xiaopeng163/flask-ansible-demo'
+    dest: ~/flask-ansible-demo
+
+
+- name: pip install requirements
+  pip:
+    requirements: ~/flask-ansible-demo/requirements.txt
+    state: present
+    virtualenv: ~/flask-ansible-demo/.env
+    virtualenv_command: /usr/bin/python3 -m venv
