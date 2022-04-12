@@ -1,0 +1,45 @@
+---
+
+- name: Flask demo without using roles
+  hosts: all                            
+
+  tasks:
+
+    - name: Install python on CentOS
+      become: yes
+      yum:
+        name: 
+          - python3
+          - python3-devel
+          - python3-pip
+          - python-setuptools
+        state: present
+
+
+    - name: Install git on CentOS
+      become: yes
+      package:
+        name: git
+        state: present
+
+
+    - name: checkout source code from github
+      git:
+        repo: 'https://github.com/xiaopeng163/flask-ansible-demo'
+        dest: ~/flask-ansible-demo
+
+
+    - name: pip install requirements
+      pip:
+        requirements: ~/flask-ansible-demo/requirements.txt
+        sate: present
+        virtualenv: ~/flask-ansible-demo/.env
+        virtualenv_command: /usr/bin/python3 -m venv
+
+    - name: Start flask app
+      shell: nohup ~/flask-ansible-demo/.env/bin/python ~/flask-ansible-demo/wsgi.py&
+      register: weboutput
+    
+    - name: print the result
+      debug:
+        var: weboutput
