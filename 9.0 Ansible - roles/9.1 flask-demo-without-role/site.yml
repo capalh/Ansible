@@ -1,3 +1,5 @@
+# A flask demo project without usign roles
+
 ---
 
 - name: Flask demo without using roles
@@ -28,6 +30,8 @@
         repo: 'https://github.com/xiaopeng163/flask-ansible-demo'
         dest: ~/flask-ansible-demo
 
+
+# create a virtual enviroment followed the sample
 
     - name: pip install requirements
       pip:

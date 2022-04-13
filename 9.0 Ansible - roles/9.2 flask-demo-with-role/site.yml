@@ -1,7 +1,10 @@
+# Ver.2 of the project using the roles. 
+# Create two different roles - one used for install python, the second used for deply the code.
+
 ---
 
 - name: Flask demo without using roles
-  hosts: all                            
+  hosts: all                     
 
   tasks:
     - include_role:
